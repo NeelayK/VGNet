@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Staatliches&family=Teko:wght@300..700&display=swap');
+
 :root {
-    --text-color: white; /* Global text color */
+    --text-color: rgb(255, 255, 255); /* Global text color */
     --button-bg: transparent; /* Button default background */
-    --button-hover-bg: #0497aa; /* Button hover background */
+    --button-hover-bg: #4cd3a6; /* Button hover background */
     --button-hover-color: white; /* Button hover text color */
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Outfit", sans-serif;
     background: url('/Assets/BG.jpeg') no-repeat center center fixed;
     background-size: cover;
     text-align: center;
@@ -17,12 +19,14 @@ body {
 
 /* NAVIGATION */
 .nav-container {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    position: relative;
+    position:static
 }
+
 
 .nav-left, .nav-right {
     display: flex;
@@ -39,16 +43,18 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    
 }
 
 .nav-container li {
     position: relative;
+    font-weight: 400;
 }
 
 .nav-container a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 1rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -90,7 +96,7 @@ body {
 }
 
 .dropdown {
-    font-weight: bold;
+    font-weight: 400;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -113,26 +119,18 @@ body {
 
 .container h1 {
     font-size: 3rem;
-    font-family:'Courier New', Courier, monospace;
     line-height: 1.2;
-    color: rgb(67, 5, 29);
-    mix-blend-mode:color-burn;
+    color: rgb(38, 38, 38);
     margin-top: 0.5rem;
 }
 
 .container p {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
     margin: 0;
 }
 
-.masked-text {
-    color: #1e000c;
-}
 
-.masked-text-2{
-    color: transparent;
-    -webkit-text-stroke: #000000 2px;
-}
 
 /* Animations */
 .fade-in {
@@ -159,16 +157,17 @@ body {
 }
 
 .section-bg1 {
-    background: url('/Assets/SectionBG1.svg') no-repeat center center fixed;
-    background-size: cover;
+    background-image: url(/Assets/SectionBG1.svg);
+    background-size: 90%;
     background-attachment: scroll;
-    background-position-y:20%;
+    background-position-y:10%;
 }
 
 
 .section-bg2 {
-    background: url('/Assets/SectionBG2.svg') no-repeat center center fixed;
+    background-image: url(/Assets/SectionBG2.svg);
     background-size:cover;
+    background-position: 0px 100%;
     background-attachment: scroll;
 }
 
@@ -177,7 +176,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     gap: 50px;
 }
 
@@ -188,7 +186,7 @@ body {
 .text h2{
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.514);
     font-size: 3rem;
-    mix-blend-mode:difference;
+    color: var(--text-color);
 }
 
 .text h3{
@@ -200,7 +198,7 @@ body {
 }
 
 .text p{
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.366);
+    color: var(--text-color);
     font-size: 1.5rem;
 }
 
@@ -284,18 +282,20 @@ button:hover {
     transform: translateY(5px);
 }
 
-.section-bg1:nth-child(4){
+.bgind2{
     padding-right: 15%;
     position: relative;
     overflow: visible; 
     height: 80vh;
     display: flex;
+    
+    background-position-y:95%;
     align-items: center;
     justify-content: center;
 
 }
 
-.section-bg1:nth-child(4) img {
+.bgind2 img {
     width: 90%; 
     height: auto; 
     top: -10%; 
@@ -309,6 +309,7 @@ button:hover {
     z-index: -2;
     margin-top: -10rem;
     padding-top: 25vh;
+    
 }
 
 #short-line{
@@ -321,6 +322,7 @@ button:hover {
     background-attachment: scroll;
 }
 
+
 a{
     text-decoration:underline;
     color: var(--button-hover-bg);
@@ -331,7 +333,8 @@ a{
 }
 
 .team-section .section-content .image img{
-    height: 40vh;
+    width: 50vh;
+    
 }
 
 
@@ -341,11 +344,11 @@ FOOTER
 
 /* FOOTER STYLING */
 .footer {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     color: white;
-    padding: 50px 20px;
+    padding: 10px 5%;
     display: flex;
-    justify-content:center;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     text-align: left;
@@ -354,43 +357,74 @@ FOOTER
 .footer-column {
     flex: 1;
     min-width: 250px;
-    margin: 10px;
-}
-
-.footer-column:nth-child(2) {
-    flex: 2;
+    margin: 20px;
+    padding: 0 20px;
 }
 
 .footer h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    border-top: 2px dotted rgba(255, 255, 255, 0.5);
-    border-bottom: 2px dotted rgba(255, 255, 255, 0.5);
-    padding: 10px 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.5);
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+    padding: 15px 0;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 .footer p, .footer a {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     display: block;
-    margin: 5px 0;
-    transition: color 0.3s;
+    margin: 10px 0;
+    transition: color 0.3s, transform 0.2s;
 }
 
 .footer a:hover {
     color: #4fa3d1;
+    transform: translateX(5px);
+}
+
+.footer-column:nth-child(2){
+    
+    text-align: center;
 }
 
 
-/* COPYRIGHT */
+.footer-column:nth-child(3){
+    
+    text-align: right;
+}
+
 .footer-bottom {
     text-align: center;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.9rem;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
-    
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.section-indicator {
+    position: fixed;
+    font-family:monospace;
+    left: 25px; 
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg); /* Ensure full centering */
+    transform-origin: center center; /* Rotate from the center */
+    font-size: 2rem;
+    z-index: 3;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-text-stroke: 1px #ffffff6a;
+    color: transparent;
+    padding: 10px 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
